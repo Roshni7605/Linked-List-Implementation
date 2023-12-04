@@ -76,5 +76,24 @@ public class LinkedListTest {
         Assert.assertTrue(result);
     }
 
+    @Test
+    public void given3Numbers_WhenDeletedFromLinkedList_ShouldBeDeletedFromTail(){
+        Node<Integer> firstNode = new Node<>(56);
+        Node<Integer> secondNode = new Node<>(30);
+        Node<Integer> thirdNode = new Node<>(70);
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.add(firstNode);
+        linkedList.add(secondNode);
+        linkedList.add(thirdNode);
+        linkedList.displayNode();
+        linkedList.popLast();
+        System.out.println("After deleting from tail");
+        linkedList.displayNode();
+        boolean result = linkedList.head.equals(firstNode) &&
+                linkedList.head.getNext().equals(secondNode) &&
+                linkedList.tail.equals(secondNode);
+        Assert.assertTrue(result);
+    }
+
 
 }
