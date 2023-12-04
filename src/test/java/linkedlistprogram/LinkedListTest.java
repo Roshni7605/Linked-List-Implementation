@@ -89,7 +89,7 @@ public class LinkedListTest {
         linkedList.popLast();
         System.out.println("After deleting from tail");
         linkedList.displayNode();
-        boolean result = linkedList.head.equals(firstNode) &&
+        boolean result = linkedList.head.equals(thirdNode) &&
                 linkedList.head.getNext().equals(secondNode) &&
                 linkedList.tail.equals(secondNode);
         Assert.assertTrue(result);

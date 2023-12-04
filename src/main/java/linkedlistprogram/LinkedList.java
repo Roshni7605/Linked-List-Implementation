@@ -51,15 +51,29 @@ public class LinkedList<T> {
         return temp;
     }
 
-    public INode popLast(){
+    public void popLast(){
         INode temp = head;
         while (!temp.getNext().equals(tail)){
             temp = temp.getNext();
         }
         this.tail = temp;
-        temp = temp.getNext();
-        return temp;
+//        temp = temp.getNext();
+//        tail = this.tail.getNext();
+//        tail.setNext(temp);
+        temp.setNext(null);
+//        return temp;
     }
+
+//    public INode search(K key){
+//        INode<K> tempNode = head;
+//        while(tempNode != null && tempNode.getNext() != null) {
+//            if(tempNode.getKey().equals(key)) {
+//                return tempNode;
+//            }
+//            tempNode = tempNode.getNext();
+//        }
+//        return null;
+//    }
 
     public void displayNode(){
         StringBuffer nodes = new StringBuffer("My Nodes: ");
